@@ -13,7 +13,7 @@
 - Step 2. Add the dependency
 ```groovy
     dependencies {
-            implementation 'com.github.chsring:album:1.0.2'
+            implementation 'com.github.chsring:album:1.0.3'
     }
 ```
 

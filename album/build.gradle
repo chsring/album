@@ -6,7 +6,7 @@ plugins {
 apply from: "$rootDir/config/versions.gradle"
 apply from: "$rootDir/config/forces.gradle"
 android {
-    namespace 'com.srwing.album'
+//    namespace 'com.srwing.album'
     compileSdk buildVersions.compileSdk
 
     defaultConfig {
@@ -49,7 +49,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.srwing'
                 artifactId = 'album'
-                version = '1.0.2'
+                version = '1.0.3'
             }
         }
     }

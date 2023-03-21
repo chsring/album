@@ -5,7 +5,7 @@ plugins {
 apply from: "$rootDir/config/versions.gradle"
 apply from: "$rootDir/config/forces.gradle"
 android {
-    namespace 'com.srwing.album'
+//    namespace 'com.srwing.album'
     compileSdk buildVersions.compileSdk
     defaultConfig {
         applicationId "com.srwing.album"
