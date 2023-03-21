@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'maven-publish'
+}
+apply from: "$rootDir/config/versions.gradle"
+apply from: "$rootDir/config/forces.gradle"
+android {
+    namespace 'com.srwing.album'
+    compileSdk buildVersions.compileSdk
+
+    defaultConfig {
+        minSdkVersion buildVersions.minSdk
+        targetSdkVersion buildVersions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility jdkVersion.sourceCompatibility
+        targetCompatibility jdkVersion.targetCompatibility
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation deps.support.constraint_layout
+    implementation deps.support.app_compat
+    implementation deps.google.material
+    implementation deps.support.recyclerview
+    implementation deps.subsampling
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    implementation deps.glide.runtime
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.srwing'
+                artifactId = 'album'
+                version = '1.0.0'
+            }
+        }
+    }
+}

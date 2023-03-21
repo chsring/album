@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingDefaultResource">
+
+        <Button
+            android:background="#21bed9"
+            android:text="打开相册"
+            android:id="@+id/rectBar"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:paddingStart="@dimen/all_padding_6"
+            android:paddingTop="@dimen/all_padding_6"
+            android:paddingEnd="@dimen/all_padding_6"
+            android:paddingBottom="@dimen/all_padding_6" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>
