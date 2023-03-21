@@ -1,25 +1,3 @@
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url 'https://mvnrepository.com/artifact/com.github.gundy/semver4j' }
-        maven { url 'https://repo1.maven.org/maven2/' }
-        maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'https://maven.aliyun.com/repository/releases' }
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://mvnrepository.com/artifact/com.github.gundy/semver4j' }
-        maven { url 'https://repo1.maven.org/maven2/' }
-        maven { url 'https://developer.huawei.com/repo/' }
-        maven { url 'https://maven.aliyun.com/repository/releases' }
-    }
-}
 rootProject.name = "album"
 include ':app'
 include ':album'

@@ -1,5 +1,4 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     def dir = new File("config")
     if (!dir.exists()) {
@@ -9,6 +8,16 @@ buildscript {
         proUp.waitFor()
         println("gradle deal git clone finish")
     }
+    repositories {
+        google()
+//        maven { url 'https://jitpack.io' } 第13行，14行解决 semver4j-xxx.jar找不到的问题
+        maven { url 'https://mvnrepository.com/artifact/com.github.gundy/semver4j' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/releases' }
+
+    }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.2.2'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10'
@@ -16,7 +25,19 @@ buildscript {
     }
 }
 
-plugins {
-    id 'com.android.application' version '7.1.2' apply false
-    id 'com.android.library' version '7.1.2' apply false
+allprojects {
+    repositories {
+        google()
+//        maven { url 'https://jitpack.io' } 第31行，32行解决 semver4j-xxx.jar找不到的问题
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://mvnrepository.com/artifact/com.github.gundy/semver4j' }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://developer.huawei.com/repo/' }
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/releases' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
